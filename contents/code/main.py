@@ -20,7 +20,7 @@ class Vnstat(plasmascript.Applet):
 		
 		self.timer = QtCore.QTimer()
 		self.timer.setInterval(900000)
-		self.timer.start(1000)
+		self.timer.start()
 		QtCore.QObject.connect(self.timer, QtCore.SIGNAL("timeout()"), self.updateLabel)
 		
 		self.updateLabel()
@@ -33,6 +33,7 @@ class Vnstat(plasmascript.Applet):
 		
 		style = 'color:#000;font-family:Ubuntu;font-size:10px;font-weight:bold'
 		self.label.setText('<span style="' + style + '">' + frags[3] + "</span>")
+		
 
 def CreateApplet(parent):
 	return Vnstat(parent)
