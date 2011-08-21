@@ -31,8 +31,8 @@ class Vnstat(plasmascript.Applet):
 		stats = p.communicate()
 		frags = stats[0].split(';')
 		
-		style = 'color:#000;font-family:Ubuntu;font-size:10px;font-weight:bold'
-		self.label.setText('<span style="' + style + '">' + frags[3] + "</span>")
+		style = 'color:#000;font-family:Ubuntu;font-size:10px;font-weight:normal;text-align:center;'
+		self.label.setText('<div style="' + style + '"><center>' + frags[5] + '<br />' + frags[10] + "</center></div>")
 		
 
 def CreateApplet(parent):
